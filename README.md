@@ -1,72 +1,71 @@
-# CareerPulse 🚀
+# CareerPulse
 
 ### Your skills. Your path. Your career.
 
-CareerPulse is a career guidance and skill-verification platform designed to help college students understand **where they are, where they can go, and what they need to learn next**.
+CareerPulse is a career guidance and skill-verification platform designed to help college students understand their current skills, identify career opportunities, and determine what they need to learn next.
 
-Instead of simply listing skills on a resume, CareerPulse aims to connect **verified skills, career pathways, skill gaps, and employer requirements** into one platform.
+The platform connects skill verification, career pathways, skill-gap analysis, and employer matching into a single experience.
 
 ---
 
-## 💡 Problem
+## Problem
 
-College students often struggle to answer:
+College students often struggle to answer questions such as:
 
-* What career actually fits my current skills?
+* Which career paths align with my current skills?
 * What skills am I missing for a particular role?
 * What should I learn next?
-* Are the skills on my resume actually verified?
-* How would learning a new skill change my career options?
-* Which opportunities are a realistic match for me?
+* How can I demonstrate that I actually possess a skill?
+* How would learning a new skill affect my career opportunities?
 
-At the same time, employers have difficulty identifying candidates based on **actual demonstrated skills** rather than resumes alone.
+Employers also face challenges when evaluating candidates based primarily on resumes and self-reported skills.
 
-CareerPulse aims to bridge this gap.
+CareerPulse aims to address both sides of this problem through a skills-focused approach.
 
 ---
 
-## 🎯 Our Solution
+## Solution
 
-CareerPulse provides a unified platform with:
+CareerPulse provides the following core features:
 
-### 🧭 Career GPS
+### Career GPS
 
-Helps students understand their current skill profile and identify potential career paths.
+Helps students understand their current skill profile and explore potential career paths based on their capabilities and interests.
 
-### 🔮 What-If Simulator
+### What-If Simulator
 
-Allows students to explore scenarios such as:
+Allows students to explore hypothetical scenarios and understand how learning or improving a skill could affect their potential career opportunities.
+
+For example:
 
 > "What happens to my career options if I learn React?"
 
-The platform can show how adding or improving skills can affect potential career matches and pathways.
+### Skill Verification
 
-### 🧪 Skill Verification
+Allows students to demonstrate their knowledge through assessments instead of relying entirely on self-reported skills.
 
-Students can verify their claimed skills through assessments rather than simply listing them.
+Skills can progress through:
 
-Skills can move from:
+```text
+Claimed → Assessed → Verified
+```
 
-**Claimed → Assessed → Verified**
+### Career Matching
 
-This creates a more reliable representation of a student's capabilities.
-
-### 🤝 Career Matching
-
-Matches students with relevant career opportunities based on their skills and identifies:
+Matches students with relevant career opportunities based on their skills while identifying:
 
 * Matching skills
 * Missing skills
 * Skill gaps
-* Potential areas for improvement
+* Areas for improvement
 
-### 🏢 Employer Dashboard
+### Employer Dashboard
 
-Employers can explore candidates based on their demonstrated and verified skills rather than relying only on traditional resumes.
+Provides employers with a structured way to explore candidates based on their skills and verification status.
 
 ---
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 ### Frontend
 
@@ -88,24 +87,24 @@ Employers can explore candidates based on their demonstrated and verified skills
 
 * LLM API
 
-### Development & Deployment
+### Development and Deployment
 
-* Git & GitHub
-* Vercel (Frontend)
-* Backend deployment planned separately
+* Git
+* GitHub
+* Vercel
 
 ---
 
-## 🏗️ Current Implementation
+## Current Implementation
 
-The current hackathon build focuses on the **frontend prototype and core user experience**.
+The current hackathon build focuses on the frontend prototype and core user experience.
 
-Implemented frontend flows include:
+Implemented features include:
 
 * Role selection
 * Job Seeker experience
 * Employer experience
-* Authentication UI
+* Authentication interface
 * Job Seeker dashboard
 * Employer dashboard
 * Skill management
@@ -116,95 +115,93 @@ Implemented frontend flows include:
 * Employer candidate exploration
 * Profile views
 
-The current prototype uses **frontend state and mock data** to demonstrate the product workflow.
+The current prototype uses frontend state and mock data to demonstrate the product workflow.
 
-Backend services, persistent database storage and AI API integration are being developed as the next phase.
+Backend services, persistent database storage, and AI API integration are part of the next implementation phase.
 
 ---
 
-## 🔐 Authentication
+## User Flow
 
-The current authentication flow is implemented as a frontend prototype.
-
-The intended flow is:
+The intended authentication and role-based flow is:
 
 ```text
 Role Selection
-      ↓
-Job Seeker / Employer
-      ↓
-Role-specific Login
-      ↓
-Role-specific Dashboard
+      |
+      +-- Job Seeker
+      |      |
+      |      +-- Login / Sign Up
+      |             |
+      |             +-- Job Seeker Dashboard
+      |
+      +-- Employer
+             |
+             +-- Login / Sign Up
+                    |
+                    +-- Employer Dashboard
 ```
 
-Production authentication and persistent user accounts will be handled by the backend layer.
+Once a role is selected, the user remains within that role's experience.
 
 ---
 
-## 🧠 Planned Architecture
+## System Architecture
 
 ```text
-                    ┌─────────────────────┐
-                    │     CareerPulse      │
-                    │      Frontend        │
-                    │ React + Vite + TS    │
-                    └──────────┬──────────┘
-                               │
-                               ▼
-                    ┌─────────────────────┐
-                    │    Node.js +         │
-                    │      Express        │
-                    │      REST API       │
-                    └──────┬───────┬──────┘
-                           │       │
-                 ┌─────────┘       └──────────┐
-                 ▼                            ▼
-        ┌─────────────────┐         ┌─────────────────┐
-        │   PostgreSQL    │         │    LLM API      │
-        │    Database     │         │   AI Features   │
-        └─────────────────┘         └─────────────────┘
+                  CareerPulse Frontend
+                 React + Vite + TypeScript
+                           |
+                           |
+                    REST API Layer
+                           |
+                    Node.js + Express
+                       /           \
+                      /             \
+                     /               \
+              PostgreSQL           LLM API
+               Database          AI Services
 ```
 
 ---
 
-## 🌱 Future Scope
+## Future Scope
 
 Future versions of CareerPulse will include:
 
 * Persistent user accounts
-* Real skill-verification records
+* Production authentication
+* Persistent skill-verification records
 * AI-powered career recommendations
 * Personalized learning roadmaps
 * AI-powered What-If analysis
-* Real employer/job data
+* Real-time job and employer data
 * Advanced candidate-job matching
-* Skill-gap analysis
-* Analytics for students and employers
+* Automated skill-gap analysis
+* Student and employer analytics
 
 ---
 
-## 👥 Target Users
+## Target Users
 
-### Students / Job Seekers
+### Students and Job Seekers
 
-Students can understand their current capabilities, verify their skills and discover realistic career paths.
+Students can evaluate their current capabilities, verify their skills, identify gaps, and explore potential career paths.
 
 ### Employers
 
-Employers can discover candidates based on relevant and verified skills.
+Employers can discover candidates based on relevant skills and verification status.
 
 ---
 
-## 🌍 Impact
+## Impact
 
-CareerPulse aims to reduce the gap between **what students learn, what they can demonstrate, and what employers actually need**.
+CareerPulse aims to reduce the gap between what students learn, what they can demonstrate, and what employers actually need.
 
-By focusing on skills and skill gaps rather than credentials alone, the platform can help students make more informed career decisions and continuously improve their employability.
+By focusing on demonstrated skills and actionable skill gaps, the platform aims to help students make more informed career decisions and improve their employability.
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
 ### Prerequisites
 
@@ -219,7 +216,7 @@ Clone the repository:
 git clone <YOUR-GITHUB-REPOSITORY-URL>
 ```
 
-Navigate to the project:
+Navigate to the project directory:
 
 ```bash
 cd careerpulse
@@ -237,20 +234,18 @@ Start the development server:
 npm run dev
 ```
 
-Open the local development URL shown in the terminal.
+Open the local development URL provided by the development server.
 
 ---
 
-## 📌 Project Status
+## Project Status
 
 **Hackathon Prototype — Frontend MVP**
 
-The current version demonstrates the core CareerPulse user experience and product workflow. Backend, database and AI integrations are part of the ongoing implementation.
+The current version demonstrates the core CareerPulse user experience and product workflow. Backend, database, and AI integrations are currently under development.
 
 ---
 
-## 👩‍💻 Built For
+## Hackathon
 
-**Hackathon 2026**
-
-Built with the goal of making career exploration more **skill-based, transparent and actionable**.
+CareerPulse was developed as a hackathon project with the goal of making career exploration more skill-focused, transparent, and actionable.
