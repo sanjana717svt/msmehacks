@@ -1,0 +1,6 @@
+{
+  "name": "CareerPulse - Student Career & Skill Guidance",
+  "description": "Interactive career roadmap, skill gap analyzer, What-If simulator for students, and skill-based talent matching for employers.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
